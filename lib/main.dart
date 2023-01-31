@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hidable/hidable.dart';
+import 'hidable.dart';
 
 void main() {
   runApp(const MyApp());
