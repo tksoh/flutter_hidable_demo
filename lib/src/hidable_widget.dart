@@ -5,7 +5,7 @@
 //
 
 import 'package:flutter/material.dart';
-import 'package:hidable/src/hidable_controller_ext.dart';
+import 'hidable_controller_ext.dart';
 
 /// ### Widget that can make anything hidable.
 ///
