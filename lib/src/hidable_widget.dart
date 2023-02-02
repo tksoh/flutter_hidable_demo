@@ -70,6 +70,7 @@ class Hidable extends StatelessWidget with PreferredSizeWidget {
   // Custom alignment wrapper card of hidable.
   // Returns whole card at given factor.
   Widget hidableCard(double factor, hidable) {
+    debugPrint('hidableCard: factor=$factor, size=${hidable.size}');
     return Align(
       heightFactor: factor,
       alignment: const Alignment(0, -1),

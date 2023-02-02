@@ -32,6 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
   static const startCount = 3;
   int _counter = startCount;
   final scrollController = ScrollController();
+  final input = TextEditingController(text: 'cinput text');
 
   void _incrementCounter() {
     setState(() {
@@ -58,14 +59,20 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
         ),
-        body: ListView.builder(
-          controller: scrollController,
-          itemCount: _counter,
-          itemBuilder: (context, index) {
-            return Card(
-              child: ListTile(title: Text('Item #${index + 1}')),
-            );
-          },
+        body: Column(
+          children: [
+            Expanded(
+              child: ListView.builder(
+                controller: scrollController,
+                itemCount: _counter,
+                itemBuilder: (context, index) {
+                  return Card(
+                    child: ListTile(title: Text('Item #${index + 1}')),
+                  );
+                },
+              ),
+            ),
+          ],
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: _incrementCounter,
