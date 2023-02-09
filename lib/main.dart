@@ -29,7 +29,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  static const startCount = 3;
+  static const startCount = 30;
   int _counter = startCount;
   final scrollController = ScrollController();
 
