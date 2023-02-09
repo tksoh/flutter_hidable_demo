@@ -37,11 +37,14 @@ class Hidable extends StatelessWidget with PreferredSizeWidget {
   /// (56 heights with page-size width).
   final Size preferredWidgetSize;
 
+  final bool reversed;
+
   const Hidable({
     Key? key,
     required this.child,
     required this.controller,
     this.wOpacity = true,
+    this.reversed = false,
     this.preferredWidgetSize = const Size.fromHeight(56),
   }) : super(key: key);
 
@@ -70,7 +73,11 @@ class Hidable extends StatelessWidget with PreferredSizeWidget {
   // Custom alignment wrapper card of hidable.
   // Returns whole card at given factor.
   Widget hidableCard(double factor, hidable) {
-    debugPrint('hidableCard: factor=$factor, size=${hidable.size}');
+    debugPrint(
+        'hidableCard: factor=$factor, size=${hidable.size}, reversed=$reversed');
+    if (reversed) {
+      factor = 1.0 - factor;
+    }
     return Align(
       heightFactor: factor,
       alignment: const Alignment(0, -1),
